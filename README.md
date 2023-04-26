@@ -1,3 +1,5 @@
+[![Sync Fork with Original Repository](https://github.com/filipdadgar/cvelistV5/actions/workflows/sync.yaml/badge.svg)](https://github.com/filipdadgar/cvelistV5/actions/workflows/sync.yaml)
+
 # CVE List V5
 
 The [CVE List](https://www.cve.org/ResourcesSupport/Glossary?activeTerm=glossaryCVEList) is catalog of all [CVE Records](https://www.cve.org/ResourcesSupport/Glossary?activeTerm=glossaryRecord) identified by, or reported to, the [CVE Program](https://www.cve.org/).
