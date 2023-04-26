@@ -11,7 +11,7 @@ jobs:
         with:
           repository: https://github.com/CVEProject/cvelistV5.git
           ref: main
-          token: ${{ secrets.ORIGINAL_REPOSITORY_ACCESS_TOKEN }}
+          token: ${{ secrets.CVE5_SECRET }}
 
       - name: Checkout forked repository
         uses: actions/checkout@v2
@@ -25,4 +25,4 @@ jobs:
       - name: Push changes to forked repository
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.FORKED_REPOSITORY_ACCESS_TOKEN }}
+          github_token: ${{ secrets.CVE5_SECRET }}
