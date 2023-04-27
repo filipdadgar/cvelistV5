@@ -10,14 +10,14 @@ jobs:
       - name: Checkout original repository
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/CVEProject/cvelistV5.git
+          repository: CVEProject/cvelistV5
           ref: main
           token: ${{ secrets.CVE5_SECRET }}
 
       - name: Checkout forked repository
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/filipdadgar/cvelistV5
+          repository: filipdadgar/cvelistV5
           ref: main
 
       - name: Merge changes from original repository
