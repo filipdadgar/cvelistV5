@@ -27,6 +27,8 @@ jobs:
       - name: Merge changes from original repository
         run: |
           cd forked-repo
+          git config user.email "sync-bot@example.com"
+          git config user.name "Sync Bot"
           git remote add upstream ../original-repo
           git fetch upstream
           git merge --no-edit --no-ff upstream/main
