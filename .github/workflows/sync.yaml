@@ -14,6 +14,7 @@ jobs:
           ref: main
           token: ${{ secrets.CVE5_SECRET }}
           path: original-repo
+          fetch-depth: 0
 
       - name: Checkout forked repository
         uses: actions/checkout@v2
@@ -21,6 +22,7 @@ jobs:
           repository: filipdadgar/cvelistV5
           ref: main
           path: forked-repo
+          fetch-depth: 0
 
       - name: Merge changes from original repository
         run: |
