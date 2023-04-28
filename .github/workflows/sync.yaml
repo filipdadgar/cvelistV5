@@ -13,17 +13,24 @@ jobs:
           repository: CVEProject/cvelistV5
           ref: main
           token: ${{ secrets.CVE5_SECRET }}
+          path: original-repo
 
       - name: Checkout forked repository
         uses: actions/checkout@v2
         with:
           repository: filipdadgar/cvelistV5
           ref: main
+          path: forked-repo
 
       - name: Merge changes from original repository
-        run: git merge --no-edit --no-ff origin/main
+        run: |
+          cd forked-repo
+          git remote add upstream ../original-repo
+          git fetch upstream
+          git merge --no-edit --no-ff upstream/main
 
       - name: Push changes to forked repository
         uses: ad-m/github-push-action@master
         with:
+          directory: forked-repo
           github_token: ${{ secrets.CVE5_SECRET }}
